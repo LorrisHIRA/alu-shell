@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# List current directory contents after the first dash
+
+for file in *; do
+    # Skip hidden files
+    [ -e "$file" ] || continue
+    # Remove everything before the first dash, including the dash
+    echo "${file#*-}"
+done
+
